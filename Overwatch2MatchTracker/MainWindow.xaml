@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="INPUT" Height="540" Width="960" BorderBrush="Black" Background="#FFC0C3EC">
     <Grid Margin="10">
-        
+
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -49,9 +49,11 @@
         <ComboBox Grid.Column="1" x:Name="listPlayers" Width="250" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" FontSize="20" SelectedIndex="0">
             <ComboBoxItem Content="Choose Teammates"/>
         </ComboBox>
-        <Button x:Name="buttonWin" Grid.Column="1" Content="Win" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" Margin="100,0,0,0" FontSize="20" Background="Lime"/>
-        <Button x:Name="buttonLoss" Grid.Column="1" Content="Loss" HorizontalAlignment="Right" Grid.Row="5" VerticalAlignment="Center" Margin="0,0,100,0" FontSize="20" Background="Red"/>
-        <Button x:Name="buttonTie" Grid.Column="1" Content="Tie" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Background="Yellow"/>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Center" Margin="10,10,10,10">
+            <Button x:Name="buttonWin" Content="Win" FontSize="20" Background="Lime" Style="{DynamicResource styleButtonResult}" Margin="20,0,20,0"/>
+            <Button x:Name="buttonTie" Content="Tie" FontSize="20" Background="Yellow" Style="{DynamicResource styleButtonResult}" Margin="20,0,20,0"/>
+            <Button x:Name="buttonLoss" Content="Loss" FontSize="20" Background="Red" Style="{DynamicResource styleButtonResult}" Margin="20,0,20,0"/>
+        </StackPanel>
     </Grid>
-    
+
 </Window>
