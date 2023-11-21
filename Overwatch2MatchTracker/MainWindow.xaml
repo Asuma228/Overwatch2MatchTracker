@@ -27,7 +27,7 @@
         <Label Grid.Column="0" Grid.Row="3" x:Name="labelGroupSize" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Group Size</Label>
         <Label Grid.Column="0" Grid.Row="4" x:Name="labelPlayers" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Specific Players</Label>
         <Label Grid.Column="0" Grid.Row="5" x:Name="labelResult" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Match Result</Label>
-        <ComboBox Grid.Column="1" Grid.Row="0" x:Name="listMode" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Width="250" Height="30" SelectedIndex="0">
+        <ComboBox Grid.Column="1" Grid.Row="0" x:Name="listMode" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedIndex="0" Style="{DynamicResource styleComboBox}">
             <ComboBoxItem Content="Choose Mode"/>
             <ComboBoxItem Content="RQ: Tank"/>
             <ComboBoxItem Content="RQ: Damage"/>
@@ -37,16 +37,16 @@
             <ComboBoxItem Content="Team Queue"/>
             <ComboBoxItem Content="Deathmatch"/>
         </ComboBox>
-        <ComboBox Grid.Column="1" x:Name="listHero" Width="250" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontSize="20" SelectedIndex="0">
+        <ComboBox Grid.Column="1" x:Name="listHero" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" SelectedIndex="0" Style="{DynamicResource styleComboBox}">
             <ComboBoxItem Content="Choose Hero"/>
         </ComboBox>
-        <ComboBox Grid.Column="1" x:Name="listMap" Width="250" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" FontSize="20" SelectedIndex="0">
+        <ComboBox Grid.Column="1" x:Name="listMap" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" SelectedIndex="0" Style="{DynamicResource styleComboBox}">
             <ComboBoxItem Content="Choose Map"/>
         </ComboBox>
-        <ComboBox Grid.Column="1" x:Name="listGroupSize" Width="250" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" FontSize="20" SelectedIndex="0">
+        <ComboBox Grid.Column="1" x:Name="listGroupSize" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" SelectedIndex="0" Style="{DynamicResource styleComboBox}">
             <ComboBoxItem Content="Choose Group Size"/>
         </ComboBox>
-        <ComboBox Grid.Column="1" x:Name="listPlayers" Width="250" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" FontSize="20" SelectedIndex="0">
+        <ComboBox Grid.Column="1" x:Name="listPlayers" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" SelectedIndex="0" Style="{DynamicResource styleComboBox}">
             <ComboBoxItem Content="Choose Teammates"/>
         </ComboBox>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Center" Margin="10,10,10,10">
