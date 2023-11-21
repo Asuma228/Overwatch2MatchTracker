@@ -1,0 +1,57 @@
+﻿<Window Name="Input" x:Class="Overwatch2MatchTracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Overwatch2MatchTracker"
+        mc:Ignorable="d"
+        Title="INPUT" Height="540" Width="960" BorderBrush="Black" Background="#FFC0C3EC">
+    <Grid Margin="10">
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250" />
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Grid.Column="0" Grid.Row="0" x:Name="labelMode" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Mode</Label>
+        <Label Grid.Column="0" Grid.Row="1" x:Name="labelHero" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Hero</Label>
+        <Label Grid.Column="0" Grid.Row="2" x:Name="labelMap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Map</Label>
+        <Label Grid.Column="0" Grid.Row="3" x:Name="labelGroupSize" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Group Size</Label>
+        <Label Grid.Column="0" Grid.Row="4" x:Name="labelPlayers" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Specific Players</Label>
+        <Label Grid.Column="0" Grid.Row="5" x:Name="labelResult" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Match Result</Label>
+        <ComboBox Grid.Column="1" Grid.Row="0" x:Name="listMode" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20" Width="250" Height="30" SelectedIndex="0">
+            <ComboBoxItem Content="Choose Mode"/>
+            <ComboBoxItem Content="RQ: Tank"/>
+            <ComboBoxItem Content="RQ: Damage"/>
+            <ComboBoxItem Content="RQ: Support"/>
+            <ComboBoxItem Content="Open Queue"/>
+            <ComboBoxItem Content="Mystery Heroes"/>
+            <ComboBoxItem Content="Team Queue"/>
+            <ComboBoxItem Content="Deathmatch"/>
+        </ComboBox>
+        <ComboBox Grid.Column="1" x:Name="listHero" Width="250" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" FontSize="20" SelectedIndex="0">
+            <ComboBoxItem Content="Choose Hero"/>
+        </ComboBox>
+        <ComboBox Grid.Column="1" x:Name="listMap" Width="250" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" FontSize="20" SelectedIndex="0">
+            <ComboBoxItem Content="Choose Map"/>
+        </ComboBox>
+        <ComboBox Grid.Column="1" x:Name="listGroupSize" Width="250" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="3" FontSize="20" SelectedIndex="0">
+            <ComboBoxItem Content="Choose Group Size"/>
+        </ComboBox>
+        <ComboBox Grid.Column="1" x:Name="listPlayers" Width="250" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="4" FontSize="20" SelectedIndex="0">
+            <ComboBoxItem Content="Choose Teammates"/>
+        </ComboBox>
+        <Button x:Name="buttonWin" Grid.Column="1" Content="Win" HorizontalAlignment="Left" Grid.Row="5" VerticalAlignment="Center" Margin="100,0,0,0" FontSize="20" Background="Lime"/>
+        <Button x:Name="buttonLoss" Grid.Column="1" Content="Loss" HorizontalAlignment="Right" Grid.Row="5" VerticalAlignment="Center" Margin="0,0,100,0" FontSize="20" Background="Red"/>
+        <Button x:Name="buttonTie" Grid.Column="1" Content="Tie" HorizontalAlignment="Center" Grid.Row="5" VerticalAlignment="Center" FontSize="20" Background="Yellow"/>
+    </Grid>
+    
+</Window>
