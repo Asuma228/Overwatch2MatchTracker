@@ -1,12 +1,14 @@
 ﻿<Application x:Class="Overwatch2MatchTracker.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:Overwatch2MatchTracker"
-             StartupUri="MainWindow.xaml">
+             xmlns:local="clr-namespace:Overwatch2MatchTracker" 
+             xmlns:vm="clr-namespace:Overwatch2MatchTracker.ViewModels"
+             StartupUri="Views/Windows/MainWindow.xaml">
     <Application.Resources>
         <ResourceDictionary>
+            <vm:ViewModelLocator x:Key="Locator"/>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="mainDictionary.xaml"/>
+                <ResourceDictionary Source="Views/Windows/mainDictionary.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
