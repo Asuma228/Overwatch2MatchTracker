@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Overwatch2MatchTracker"
         mc:Ignorable="d"
-        Title="INPUT" Height="540" Width="960" BorderBrush="Black" Background="#FFC0C3EC">
+        Title="INPUT" Height="720" Width="1280" BorderBrush="Black" Background="#FFC0C3EC">
     <Grid Margin="10">
 
         <Grid.RowDefinitions>
@@ -21,12 +21,12 @@
             <ColumnDefinition Width="500" />
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
-        <Label Grid.Column="0" Grid.Row="0" x:Name="labelMode" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Mode</Label>
-        <Label Grid.Column="0" Grid.Row="1" x:Name="labelHero" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Hero</Label>
-        <Label Grid.Column="0" Grid.Row="2" x:Name="labelMap" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Map</Label>
-        <Label Grid.Column="0" Grid.Row="3" x:Name="labelGroupSize" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Group Size</Label>
-        <Label Grid.Column="0" Grid.Row="4" x:Name="labelPlayers" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Specific Players</Label>
-        <Label Grid.Column="0" Grid.Row="5" x:Name="labelResult" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="20">Match Result</Label>
+        <Label Grid.Column="0" Grid.Row="0" x:Name="labelMode" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource OWFont}" >Mode</Label>
+        <Label Grid.Column="0" Grid.Row="1" x:Name="labelHero" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource OWFont}" >Hero</Label>
+        <Label Grid.Column="0" Grid.Row="2" x:Name="labelMap" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource OWFont}">Map</Label>
+        <Label Grid.Column="0" Grid.Row="3" x:Name="labelGroupSize" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource OWFont}">Group Size</Label>
+        <Label Grid.Column="0" Grid.Row="4" x:Name="labelPlayers" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource OWFont}">Specific Players</Label>
+        <Label Grid.Column="0" Grid.Row="5" x:Name="labelResult" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{DynamicResource OWFont}">Match Result</Label>
         <ComboBox Grid.Column="1" Grid.Row="0" x:Name="listMode" HorizontalAlignment="Center" VerticalAlignment="Center" SelectedIndex="0" Style="{DynamicResource styleComboBox}">
             <ComboBoxItem Content="Choose Mode"/>
             <ComboBoxItem Content="RQ: Tank"/>
@@ -50,9 +50,9 @@
             <ComboBoxItem Content="Choose Teammates"/>
         </ComboBox>
         <StackPanel Grid.Column="1" HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="5" VerticalAlignment="Center" Margin="10,10,10,10">
-            <Button x:Name="buttonWin" Content="Win" FontSize="20" Background="Lime" Style="{DynamicResource styleButtonResult}" Margin="20,0,20,0"/>
-            <Button x:Name="buttonTie" Content="Tie" FontSize="20" Background="Yellow" Style="{DynamicResource styleButtonResult}" Margin="20,0,20,0"/>
-            <Button x:Name="buttonLoss" Content="Loss" FontSize="20" Background="Red" Style="{DynamicResource styleButtonResult}" Margin="20,0,20,0"/>
+            <Button x:Name="buttonWin" Content="Win" Background="Lime" Style="{DynamicResource styleButtonResult}" Margin="20,0,20,0"/>
+            <Button x:Name="buttonTie" Content="Tie" Background="Yellow" Style="{DynamicResource styleButtonResult}" Margin="20,0,20,0"/>
+            <Button x:Name="buttonLoss" Content="Loss" Background="Red" Style="{DynamicResource styleButtonResult}" Margin="20,0,20,0"/>
         </StackPanel>
     </Grid>
 
