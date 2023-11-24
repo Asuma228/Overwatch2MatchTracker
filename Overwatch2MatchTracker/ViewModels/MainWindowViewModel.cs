@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Overwatch2MatchTracker.ViewModels
 {
-    class MainWindowViewModel :ViewModel
+    class MainWindowViewModel : ViewModel
     {
         #region Title : string Заголовок
 
-        private string _Title = "INPUT";
+        private string _Title = "Overwatch 2 Match Tracker";
 
         public string Title { get => _Title; set => Set(ref _Title, value); }
 

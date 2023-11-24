@@ -1,5 +1,7 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Overwatch2MatchTracker.Services;
+using Overwatch2MatchTracker.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -17,16 +19,16 @@ namespace Overwatch2MatchTracker
     public partial class App : Application
     {
 
-        private static IHost _Host;
-        private static IHost Host => _Host 
+        private static IHost __Host;
+        private static IHost Host => __Host
             ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
 
-        public static IServiceProvider Services => _Host.Services;
+        public static IServiceProvider Services => __Host.Services;
 
-        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services)
-        {
-          
-        }
+        internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
+            .AddServices()
+            .AddViewModels()
+            ;
 
         protected override async void OnStartup(StartupEventArgs e)
         {

@@ -4,8 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Overwatch2MatchTracker"
+        DataContext="{Binding Path=MainWindowModel, Source={StaticResource Locator}}"
         mc:Ignorable="d"
-        Title="INPUT" Height="720" Width="1280" BorderBrush="Black" Background="#FFC0C3EC">
+        Title="{Binding Path=Title}" Height="720" Width="1280" BorderBrush="Black" Background="#FFC0C3EC">
     <Grid Margin="10">
 
         <Grid.RowDefinitions>

@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 
 namespace Overwatch2MatchTracker.ViewModels
 {
-    class ViewModelLocator
+    static class ViewModelRegistrator
     {
-        public MainWindowViewModel MainWindowModel => App.Services.GetRequiredService<MainWindowViewModel>();
+        public static IServiceCollection AddViewModels(this IServiceCollection services) => services
+            ;
     }
 }
