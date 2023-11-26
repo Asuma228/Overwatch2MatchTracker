@@ -39,7 +39,7 @@
             <ComboBoxItem Content="Deathmatch"/>
         </ComboBox>
         <ComboBox Grid.Column="1" x:Name="listHero" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" SelectedIndex="0" Style="{DynamicResource styleComboBox}">
-            <ComboBoxItem Content="Choose Hero"/>
+            <ComboBoxItem Content="{Binding Path=HeroName}"/>
         </ComboBox>
         <ComboBox Grid.Column="1" x:Name="listMap" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" SelectedIndex="0" Style="{DynamicResource styleComboBox}">
             <ComboBoxItem Content="Choose Map"/>
