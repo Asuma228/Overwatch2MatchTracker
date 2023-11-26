@@ -24,7 +24,7 @@ namespace Overwatch2MatchTracker
         private static IHost Host => __Host
             ??= Program.CreateHostBuilder(Environment.GetCommandLineArgs()).Build();
 
-        public static IServiceProvider Services => __Host.Services;
+        public static IServiceProvider Services => Host.Services;
 
         internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
             .AddDatabase(host.Configuration.GetSection("DataBase"))
@@ -35,7 +35,7 @@ namespace Overwatch2MatchTracker
         protected override async void OnStartup(StartupEventArgs e)
         {
             using(var scope = Services.CreateScope())
-                    scope.ServiceProvider.GetRequiredService<DbInitializer>().InitializeAsync().Wait();
+                await scope.ServiceProvider.GetRequiredService<DbInitializer>().InitializeAsync();
             var host = Host;
             base.OnStartup(e);
             await host.StartAsync();

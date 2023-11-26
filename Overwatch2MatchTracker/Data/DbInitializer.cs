@@ -55,8 +55,8 @@ namespace Overwatch2MatchTracker.Data
             var timer = Stopwatch.StartNew();
             _logger.LogInformation("Инициализация списка героев...");
 
-
-            _Hero[1] = new Hero{ Name = "Ana" };
+            _Hero = new Hero[39];
+            _Hero[1] = new Hero { Name = "Ana" };
             _Hero[2] = new Hero { Name = "Ashe" };
             _Hero[3] = new Hero { Name = "Baptiste" };
             _Hero[4] = new Hero { Name = "Bastion" };
@@ -94,7 +94,7 @@ namespace Overwatch2MatchTracker.Data
             _Hero[36] = new Hero { Name = "Winston" };
             _Hero[37] = new Hero { Name = "Wrecking Ball" };
             _Hero[38] = new Hero { Name = "Zarya" };
-            _Hero[39] = new Hero { Name = "Zenyatta" };
+            _Hero[0] = new Hero { Name = "Zenyatta" };
             await _db.Heroes.AddRangeAsync(_Hero);
             await _db.SaveChangesAsync();
 
@@ -107,6 +107,7 @@ namespace Overwatch2MatchTracker.Data
             var timer = Stopwatch.StartNew();
             _logger.LogInformation("Инициализация списка карт...");
 
+            _Maps = new Map[27];
             _Maps[1] = new Map { Name = "Antarctic Peninsula" };
             _Maps[2] = new Map { Name = "Busan" };
             _Maps[3] = new Map { Name = "Ilios" };
@@ -133,7 +134,7 @@ namespace Overwatch2MatchTracker.Data
             _Maps[24] = new Map { Name = "Paraiso" };
             _Maps[25] = new Map { Name = "Colosseo" };
             _Maps[26] = new Map { Name = "Esperança" };
-            _Maps[27] = new Map { Name = "New Queen Street" };
+            _Maps[0] = new Map { Name = "New Queen Street" };
             await _db.Maps.AddRangeAsync(_Maps);
             await _db.SaveChangesAsync();
 
@@ -146,11 +147,12 @@ namespace Overwatch2MatchTracker.Data
             var timer = Stopwatch.StartNew();
             _logger.LogInformation("Инициализация размеров групп...");
 
+            _GroupSizes = new GroupSize[5];
             _GroupSizes[1] = new GroupSize { Name = "Solo" };
             _GroupSizes[2] = new GroupSize { Name = "Duo" };
             _GroupSizes[3] = new GroupSize { Name = "Trio" };
             _GroupSizes[4] = new GroupSize { Name = "Quartet" };
-            _GroupSizes[5] = new GroupSize { Name = "Quintet" };
+            _GroupSizes[0] = new GroupSize { Name = "Quintet" };
             await _db.GroupSizes.AddRangeAsync(_GroupSizes);
             await _db.SaveChangesAsync();
 
@@ -164,13 +166,14 @@ namespace Overwatch2MatchTracker.Data
             var timer = Stopwatch.StartNew();
             _logger.LogInformation("Инициализация режимов игры...");
 
+            _Modes = new Mode[7];
             _Modes[1] = new Mode { Name = "RQ: Tank" };
             _Modes[2] = new Mode { Name = "RQ: Damage" };
             _Modes[3] = new Mode { Name = "RQ: Support" };
             _Modes[4] = new Mode { Name = "Open Queue" };
             _Modes[5] = new Mode { Name = "Mystery Heroes" };
             _Modes[6] = new Mode { Name = "Team Queue"};
-            _Modes[7] = new Mode { Name = "Deathmatch" };
+            _Modes[0] = new Mode { Name = "Deathmatch" };
             await _db.Modes.AddRangeAsync(_Modes);
             await _db.SaveChangesAsync();
             _logger.LogInformation("Инициализация режимов игры выполнена за {0} мс", timer.ElapsedMilliseconds);
