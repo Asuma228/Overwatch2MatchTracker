@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Overwatch2MatchTracker.Data;
 using Overwatch2MatchTracker.Services;
 using Overwatch2MatchTracker.ViewModels;
 using System;
@@ -26,6 +27,7 @@ namespace Overwatch2MatchTracker
         public static IServiceProvider Services => __Host.Services;
 
         internal static void ConfigureServices(HostBuilderContext host, IServiceCollection services) => services
+            .AddDatabase(host.Configuration.GetSection("DataBase"))
             .AddServices()
             .AddViewModels()
             ;

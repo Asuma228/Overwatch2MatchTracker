@@ -19,8 +19,8 @@ namespace Overwatch2MatchTracker.Data
                 var type = Configuration["Type"];
                 switch (type)
                 {
-                    case null: throw new InvalidOperationException("Не определён тип БД");
-                    default: throw new InvalidOperationException($"Тип подключения {type} не поддерживается");
+                    case null:    throw new InvalidOperationException("Не определён тип БД");
+                         default: throw new InvalidOperationException($"Тип подключения {type} не поддерживается");
                     case "MSSQL":
                         opt.UseSqlServer(Configuration.GetConnectionString(type));
                         break;

@@ -4,8 +4,8 @@ namespace Overwatch2MatchTracker.DAL.Entities.Base
 {
     public abstract class NamedEntity : Entity
     {
-        [Required]
-        public string Name { get; set; }
+        //[Required]
+        public required string Name { get; set; }
     }
 
 }

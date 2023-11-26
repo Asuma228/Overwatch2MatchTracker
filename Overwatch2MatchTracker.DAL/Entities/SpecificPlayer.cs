@@ -2,7 +2,7 @@
 
 namespace Overwatch2MatchTracker.DAL.Entities
 {
-    public abstract class SpecificPlayer : NamedEntity
+    public class SpecificPlayer : NamedEntity
     {
     }
 
