@@ -14,7 +14,7 @@ namespace Overwatch2MatchTracker.DAL.Context
         public DbSet<Mode> Modes { get; set; }
         public DbSet<SpecificPlayer> SpecificPlayers { get; set; }
 
-        public Overwatch2MatchTrackerDB(DbContextOptions<Overwatch2MatchTrackerDB> options) : base (options) { }
+        public Overwatch2MatchTrackerDB(DbContextOptions<Overwatch2MatchTrackerDB> options) : base(options) { }
     }
 
 }
