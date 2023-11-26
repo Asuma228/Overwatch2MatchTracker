@@ -29,6 +29,7 @@ namespace Overwatch2MatchTracker.Data
                         break;
                 }
             })
+            .AddTransient<DbInitializer>()
             ;
     }
 }

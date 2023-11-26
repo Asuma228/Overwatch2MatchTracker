@@ -34,6 +34,8 @@ namespace Overwatch2MatchTracker
 
         protected override async void OnStartup(StartupEventArgs e)
         {
+            using(var scope = Services.CreateScope())
+                    scope.ServiceProvider.GetRequiredService<DbInitializer>().InitializeAsync().Wait();
             var host = Host;
             base.OnStartup(e);
             await host.StartAsync();
