@@ -9,7 +9,7 @@ namespace Overwatch2MatchTracker.DAL.Entities
 {
     public class Game : NamedEntity
     {
-        public virtual Mode Mode { get; set; }  
+        public virtual Mode Mode { get; set; }
         public virtual ICollection<Hero> Heroes { get; set; }
         public virtual Map Map { get; set; }
         public virtual ICollection<SpecificPlayer> SpecificPlayers { get; set; }

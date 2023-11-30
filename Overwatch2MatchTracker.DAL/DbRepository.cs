@@ -1,16 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Overwatch2MatchTracker.DAL.Context;
+using Overwatch2MatchTracker.DAL.Entities;
 using Overwatch2MatchTracker.DAL.Entities.Base;
 using Overwatch2MatchTraker.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Overwatch2MatchTracker.DAL
 {
-    class DbRepository<T> : IRepository<T> where T : Entity, new()
+    internal class DbRepository<T> : IRepository<T> where T : Entity, new()
     {
         private readonly Overwatch2MatchTrackerDB _db;
         private readonly DbSet<T> _Set;
@@ -78,5 +80,25 @@ namespace Overwatch2MatchTracker.DAL
             if (AutoSaveChanges)
                 await _db.SaveChangesAsync(Cancel).ConfigureAwait(false);
         }
+    }
+
+    class GamesRepository : DbRepository<Game>
+    {
+        public override IQueryable<Game> Items
+        {
+            get
+            {
+                return base.Items
+                    .Include(item => item.Mode)
+                    .Include(item => item.Heroes)
+                    .Include(item => item.Map)
+                    .Include(item => item.SpecificPlayers)
+                    .Include(item => item.GroupSize)
+                    .Include(item => item.MatchResult)
+                    ;
+            }
+        }
+
+        public GamesRepository(Overwatch2MatchTrackerDB db) : base(db) { }
     }
 }

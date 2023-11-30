@@ -43,6 +43,9 @@ namespace Overwatch2MatchTracker.Data
             await InitializeMaps();
             await InitializeGroupSizes();
             await InitializeModes();
+            await InitializeSpecificPlayers();
+            await InitializeMatchResults();
+            await InitializeGames();
             _logger.LogInformation("Инициализация БД выполнена за {0} с", timer.Elapsed.TotalSeconds);
 
         }
@@ -177,6 +180,63 @@ namespace Overwatch2MatchTracker.Data
             await _db.Modes.AddRangeAsync(_Modes);
             await _db.SaveChangesAsync();
             _logger.LogInformation("Инициализация режимов игры выполнена за {0} мс", timer.ElapsedMilliseconds);
+        }
+
+
+        private SpecificPlayer[] _SpecificPlayers;
+        private async Task InitializeSpecificPlayers()
+        {
+            var timer = Stopwatch.StartNew();
+            _logger.LogInformation("Инициализация режимов игры...");
+
+            _SpecificPlayers = new SpecificPlayer[5];
+            _SpecificPlayers[0] = new SpecificPlayer { Name = "Kejchi" };
+            _SpecificPlayers[1] = new SpecificPlayer { Name = "Kuromizai" };
+            _SpecificPlayers[2] = new SpecificPlayer { Name = "HolyBoy" };
+            _SpecificPlayers[3] = new SpecificPlayer { Name = "beannshie" };
+            _SpecificPlayers[4] = new SpecificPlayer { Name = "Calendula" };
+            await _db.SpecificPlayers.AddRangeAsync(_SpecificPlayers);
+            await _db.SaveChangesAsync();
+            _logger.LogInformation("Инициализация тиммейтов выполнена за {0} мс", timer.ElapsedMilliseconds);
+        }
+
+
+        private MatchResult[] _MatchResults;
+        private async Task InitializeMatchResults()
+        {
+            var timer = Stopwatch.StartNew();
+            _logger.LogInformation("Инициализация режимов игры...");
+
+            _MatchResults = new MatchResult[3];
+            _MatchResults[0] = new MatchResult { Name = "Win" };
+            _MatchResults[1] = new MatchResult { Name = "Tie" };
+            _MatchResults[2] = new MatchResult { Name = "Loss" };
+            await _db.MatchResults.AddRangeAsync(_MatchResults);
+            await _db.SaveChangesAsync();
+            _logger.LogInformation("Инициализация исходов игры выполнена за {0} мс", timer.ElapsedMilliseconds);
+        }
+
+
+        private Game[] _Games;
+        private async Task InitializeGames()
+        {
+            var timer = Stopwatch.StartNew();
+            _logger.LogInformation("Инициализация игр...");
+
+            _Games = new Game[1];
+            _Games[0] = new Game {
+                Name  = "Game1",
+                Mode = _Modes[1], //Присваивается ID вместо записи
+                Heroes = _Hero[1..3],
+                Map = _Maps[1],
+                SpecificPlayers = _SpecificPlayers[1..2],
+                GroupSize = _GroupSizes[1],
+                MatchResult = _MatchResults[0]
+            };
+            await _db.Games.AddRangeAsync(_Games);
+            await _db.SaveChangesAsync();
+            _logger.LogInformation("Инициализация игр выполнена за {0} мс", timer.ElapsedMilliseconds);
+
         }
     }
 }

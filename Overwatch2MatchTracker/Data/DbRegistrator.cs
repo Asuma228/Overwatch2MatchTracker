@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Overwatch2MatchTracker.DAL;
 using Overwatch2MatchTracker.DAL.Context;
 using System;
 using System.Collections.Generic;
@@ -30,6 +31,7 @@ namespace Overwatch2MatchTracker.Data
                 }
             })
             .AddTransient<DbInitializer>()
+            .AddRepositoriesInDB()
             ;
     }
 }

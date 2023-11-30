@@ -1,7 +1,9 @@
-﻿using MathCore.Extensions;
+﻿using MathCore.Collections.Interfaces;
+using MathCore.Extensions;
 using MathCore.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using Overwatch2MatchTracker.DAL.Context;
+using Overwatch2MatchTracker.DAL.Entities;
 using Overwatch2MatchTracker.DAL.Entities.Base;
 using System;
 using System.Collections.Generic;
@@ -13,6 +15,8 @@ namespace Overwatch2MatchTracker.ViewModels
 {
     class MainWindowViewModel : ViewModel
     {
+        //private readonly IRepository<Game> _GamesRepository;
+
         #region Title : string Заголовок
 
         private string _Title = "Overwatch 2 Match Tracker";
@@ -24,5 +28,12 @@ namespace Overwatch2MatchTracker.ViewModels
         public object HeroName { get => _HeroName; set => Set(ref _HeroName, value); }
 
         #endregion
+
+       // public MainWindowViewModel (IRepository<Game> GamesRepository)
+       // {
+       //     _GamesRepository = GamesRepository;
+       // 
+       //     var games = GamesRepository.Items.Take(10).ToArray();
+       // }
     }
 }
